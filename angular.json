@@ -117,6 +117,163 @@
           }
         }
       }
+    },
+    "lib-vinhos": {
+      "projectType": "library",
+      "root": "libs/lib-vinhos",
+      "sourceRoot": "libs/lib-vinhos/src",
+      "prefix": "crud",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/lib-vinhos"],
+          "options": {
+            "project": "libs/lib-vinhos/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/lib-vinhos/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/lib-vinhos/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/lib-vinhos/src/test.ts",
+            "tsConfig": "libs/lib-vinhos/tsconfig.spec.json",
+            "karmaConfig": "libs/lib-vinhos/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/lib-vinhos/src/**/*.ts",
+              "libs/lib-vinhos/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "vinhos": {
+      "projectType": "application",
+      "root": "apps/vinhos",
+      "sourceRoot": "apps/vinhos/src",
+      "prefix": "crud",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/vinhos",
+            "index": "apps/vinhos/src/index.html",
+            "main": "apps/vinhos/src/main.ts",
+            "polyfills": "apps/vinhos/src/polyfills.ts",
+            "tsConfig": "apps/vinhos/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": ["apps/vinhos/src/favicon.ico", "apps/vinhos/src/assets"],
+            "styles": ["apps/vinhos/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/vinhos/src/environments/environment.ts",
+                  "with": "apps/vinhos/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "vinhos:build:production"
+            },
+            "development": {
+              "browserTarget": "vinhos:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "vinhos:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/vinhos/src/**/*.ts",
+              "apps/vinhos/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/vinhos"],
+          "options": {
+            "jestConfig": "apps/vinhos/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "vinhos-e2e": {
+      "root": "apps/vinhos-e2e",
+      "sourceRoot": "apps/vinhos-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/vinhos-e2e/cypress.json",
+            "devServerTarget": "vinhos:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "vinhos:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/vinhos-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
     }
   },
   "cli": {
