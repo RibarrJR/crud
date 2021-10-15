@@ -7,8 +7,10 @@
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test core ",
-    "test-vinhos": "nx test vinhos --watch=false --sourceMap=true --codeCoverage=true –browsers ChromeHeadless"
+    "test": "nx test --watch=true --sourceMap=true --codeCoverage=true –browsers ChromeHeadless",
+    "test-core": "nx test core --codeCoverage=true ",
+    "test-vinhos": "nx test vinhos --watch=true --sourceMap=true --codeCoverage=true –browsers ChromeHeadless",
+    "test-2": "nx test  --browsers=Chrome --single-run=false"
   },
   "private": true,
   "dependencies": {
