@@ -7,7 +7,8 @@
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test core ",
+    "test-vinhos": "nx test vinhos --watch=false --sourceMap=true --codeCoverage=true –browsers ChromeHeadless"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^12.2.0",
     "@angular/router": "^12.2.0",
     "@nrwl/angular": "12.9.0",
+    "jasmine": "^3.10.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
@@ -55,6 +57,7 @@
     "jest-preset-angular": "9.0.7",
     "karma": "~5.0.0",
     "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "^2.0.3",
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",

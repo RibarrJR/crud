@@ -28,14 +28,13 @@
     ]
   },
   "projects": {
-    "cruds": {
+    "core": {
       "tags": []
     },
-    "cruds-e2e": {
-      "tags": [],
-      "implicitDependencies": ["cruds"]
-    },
     "lib-vinhos": {
+      "tags": []
+    },
+    "shared": {
       "tags": []
     },
     "vinhos": {

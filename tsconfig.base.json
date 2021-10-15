@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@vinhos": ["libs/lib-vinhos/src/index.ts"]
+      "@vinhos": ["libs/lib-vinhos/src/index.ts"],
+      "cruds-shared": ["libs/shared/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
