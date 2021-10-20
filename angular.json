@@ -17,7 +17,15 @@
             "polyfills": "apps/core/src/polyfills.ts",
             "tsConfig": "apps/core/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["apps/core/src/favicon.ico", "apps/core/src/assets"],
+            "assets": [
+              "apps/core/src/favicon.ico",
+              "apps/core/src/assets",
+              {
+                "glob": "**/*",
+                "input": "libs/shared/src/assets",
+                "output": "./assets"
+              }
+            ],
             "styles": ["apps/core/src/styles.scss"],
             "scripts": []
           },
@@ -325,5 +333,5 @@
       "style": "scss"
     }
   },
-  "defaultProject": "cruds"
+  "defaultProject": "core"
 }
