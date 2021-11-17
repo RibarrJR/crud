@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {SharedModule} from 'cruds-shared'
+import { SharedModule } from '@cruds-shared'
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// primeng
+import {MenubarModule} from 'primeng/menubar';
+import { InputTextModule } from 'primeng/inputtext';
+import {TabViewModule} from 'primeng/tabview'
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -11,6 +16,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SharedModule,
     RouterModule.forRoot([], { initialNavigation: 'enabledBlocking' }),
     BrowserAnimationsModule,
+    // primengModules
+    MenubarModule,
+    InputTextModule,
+    TabViewModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],

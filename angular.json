@@ -26,7 +26,14 @@
                 "output": "./assets"
               }
             ],
-            "styles": ["apps/core/src/styles.scss"],
+            "styles": [
+              "apps/core/src/styles.scss",
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/font-awesome/scss/font-awesome.scss",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -107,7 +114,7 @@
       "projectType": "library",
       "root": "libs/lib-vinhos",
       "sourceRoot": "libs/lib-vinhos/src",
-      "prefix": "crud",
+      "prefix": "vinhos",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",

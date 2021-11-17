@@ -1,11 +1,24 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { InputTextModule } from 'primeng/inputtext';
+import { MenubarModule } from 'primeng/menubar';
+import { TabViewModule } from 'primeng/tabview';
+import { SharedModule } from '@cruds-shared';
+import { CardModule } from 'primeng/card';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
+
+
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [
+        RouterTestingModule,
+        MenubarModule,
+        SharedModule,
+        InputTextModule,
+        TabViewModule,CardModule
+      ],
       declarations: [AppComponent],
     }).compileComponents();
   });
@@ -22,12 +35,12 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('core');
   });
 
-  it('should render title', () => {
+  it(`deve abrir uma url em uma nova aba quando clicado no card`,()=>{
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome to core!'
-    );
+    const app = fixture.componentInstance;
+    const ENVIRONMENTS:URL= new URL('http://google.com');
+    const newTab= app.openApp(ENVIRONMENTS);
+    expect(newTab).toBeTrue();
   });
+
 });

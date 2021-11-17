@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-
+import { CardModule } from './card.module';
+import { DefaultButtonModule } from './components/buttons/button/button.module';
 @NgModule({
-  imports: [CommonModule],
+  imports: [DefaultButtonModule],
+  declarations: [],
+  exports:[
+    DefaultButtonModule,
+    CardModule
+  ]
 })
 export class SharedModule {}

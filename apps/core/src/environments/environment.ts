@@ -4,6 +4,9 @@
 
 export const environment = {
   production: false,
+  vinhosApp: new URL('http://localhost:4201'),
+  restaurantesApp: new URL('http://localhost:4202'),
+  viagensApp: new URL('http://localhost:4203'),
 };
 
 /*
