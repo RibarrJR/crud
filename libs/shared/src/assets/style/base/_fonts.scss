@@ -1,0 +1,36 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+
+/**
+ * Font Family: Muli
+ */
+ @font-face {
+	font-family: "Dosis Light";
+	src: url(../../fonts/static/Dosis-Light.ttf) format("truetype");
+	font-display:auto;
+	font-style:italic;
+	font-weight:400;
+}
+
+@font-face {
+	font-family: "Dosis Regular";
+	src: url(../../fonts/static/Dosis-Regular.ttf) format("truetype");
+	font-display:auto;
+	font-style:normal;
+	font-weight:400;
+}
+
+@font-face {
+	font-family: "Dosis Bold";
+	src: url(../../fonts/static/Dosis-Bold.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+	font-family: "Dosis Medium";
+	src: url(../../fonts/static/Dosis-Medium.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

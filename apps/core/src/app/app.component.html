@@ -1,0 +1,42 @@
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+    <!--
+    <button type="button" pButton label="Vinhos" class="p-button-text">
+      <fa-icon size="lg" class="p-p-2" [icon]="icons[0]"> </fa-icon>
+    </button>
+    <button type="button" pButton label="Restaurantes" class="p-button-text">
+      <fa-icon size="lg" class="p-p-2" [icon]="icons[1]"> </fa-icon>
+    </button>
+    <button type="button" pButton label="Viagens" class="p-button-text">
+      <fa-icon size="lg" class="p-p-2" [icon]="icons[2]"> </fa-icon>
+    </button> -->
+
+  </ng-template>
+  <ng-template pTemplate="end">
+    <div>
+      <button type="button" pButton label="Logout" class="p-button-danger" icon="pi pi-power-off"></button>
+    </div>
+
+  </ng-template>
+</p-menubar>
+
+<div class="container">
+  <div class="row">
+    <h1 class="text-center">
+      Escolha o APP de sua preferencia:
+    </h1>
+  </div>
+  <div class="row">
+    <div class="col-12 row mt-3">
+      <div class="col-4" id="cards" *ngFor="let apps of appList">
+        <shared-card (click)="openApp(apps.url);">
+          <div header class="text-center p-3">
+            <fa-icon size="4x" class="p-2" [icon]="apps.icon"> </fa-icon>
+          </div>
+          <p class="text-center">{{apps.label}}</p>
+          <div footer> </div>
+        </shared-card>
+      </div>
+    </div>
+  </div>
+</div>

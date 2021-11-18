@@ -1,0 +1,17 @@
+shared-card{
+  cursor: pointer;
+  fa-icon{
+    color:rebeccapurple
+  }
+  p{
+    color:purple;
+    font-weight: bold;
+
+  }
+}
+
+
+
+shared-card:focus{
+  border:1px solid blue
+}

@@ -1,0 +1,15 @@
+// Imports para as aplicações
+
+// 1.Configurações e helpers
+
+@import 'abstracts/functions', 'abstracts/mixins', 'abstracts/variables';
+
+// 2.Vendors
+
+@import 'vendors/normalize';
+
+// 3.Themes
+
+@import 'themes/';
+
+@import 'base/base', 'base/fonts';
