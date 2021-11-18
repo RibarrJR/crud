@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MenuComponent } from './UI/menu/menu.component';
-import { MainContentComponent } from './UI/main-content/main-content.component';
-import { CrudTableComponent } from './UI/crud-table/crud-table.component';
-
+import { MainContentModule } from './UI/main-content/main-content.module';
+import { MenuModule } from './UI/menu/menu.module';
+import { VinhosRoutingModule } from './vinhos.routing.module';
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule,MainContentModule,MenuModule,VinhosRoutingModule],
+  exports:[MainContentModule],
   declarations: [
-    MenuComponent,
-    MainContentComponent,
-    CrudTableComponent
   ],
 })
 export class LibVinhosModule {}

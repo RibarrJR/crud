@@ -11,13 +11,13 @@
     "build": "nx build",
     "test": "nx core --codeCoverage=true --sourceMap=true --reporters=junit",
     "test-core": "nx test core --codeCoverage=true ",
-    "test-core-reporter": "nx test core --watch=false --sourceMap=true --reporters junit –browsers ChromeHeadless",
-    "test-vinhos": "nx test vinhos --watch=true --sourceMap=true --codeCoverage=true –browsers ChromeHeadless"
+    "test-vinhos": "nx test vinhos --codeCoverage=true ",
+    "test-core-reporter": "nx test core --watch=false --sourceMap=true --reporters junit –browsers ChromeHeadless"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^12.2.13",
-    "@angular/cdk": "^12.2.12",
+    "@angular/cdk": "^12.2.13",
     "@angular/common": "^12.2.13",
     "@angular/compiler": "^12.2.13",
     "@angular/core": "^12.2.13",
