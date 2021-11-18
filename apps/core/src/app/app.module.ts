@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MenubarModule} from 'primeng/menubar';
 import { InputTextModule } from 'primeng/inputtext';
 import {TabViewModule} from 'primeng/tabview'
+import { APP_BASE_HREF } from '@angular/common';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -22,7 +23,7 @@ import {TabViewModule} from 'primeng/tabview'
     TabViewModule,
 
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
